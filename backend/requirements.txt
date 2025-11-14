@@ -1,3 +1,30 @@
 ﻿fastapi
 uvicorn
+python-multipart
+aiofiles
+
+# PDF & document extraction
 pdfplumber
+PyPDF2
+python-docx
+openpyxl
+pandas
+
+# OCR support (if you ever enable pytesseract)
+pytesseract
+
+# AI / NLP helpers
+regex
+python-dateutil
+
+# Table parsing helper
+tabulate
+
+# Sanctions / trade logic utilities
+requests
+
+# To avoid pydantic v2 conflicts
+pydantic<2.0
+
+# Optional but recommended for stable JSON encoding on Render
+orjson
