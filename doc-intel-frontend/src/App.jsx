@@ -68,7 +68,7 @@ export default function App() {
     files.forEach((f) => fd.append("files", f));
 
     try {
-      const res = await axios.post("https://doc-intel-yvqm.onrender.com", fd, {
+      const res = await axios.post("https://doc-intel-yvqm.onrender.com/docs", fd, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setData(res.data);
