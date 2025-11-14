@@ -71,7 +71,7 @@ def save_memory(records):
 
 # ---------- App ----------
 app = FastAPI(title="Document Intelligence v0.9 – Trade Compliance (Template-Agnostic step)")
-
+origins = ["*"]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173"],
@@ -609,73 +609,7 @@ async def compare_docs(files: List[UploadFile] = File(...)):
     }
 
 
-
-def incoterm_analysis(extracted_texts):
-    """
-    Detects Incoterms in extracted documents and provides interpretation.
-    Returns a dict with summary, risk level, and detailed responsibilities.
-    """
-    incoterms_list = [
-        "EXW", "FCA", "FAS", "FOB",
-        "CFR", "CIF", "CPT", "CIP",
-        "DAP", "DPU", "DDP"
-    ]
-
-    knowledge_base = {
-        "EXW": {"description": "Buyer bears all costs from seller’s premises.", "responsibility": "Lowest seller responsibility."},
-        "FCA": {"description": "Seller delivers goods cleared for export to carrier chosen by buyer.", "responsibility": "Shared responsibility."},
-        "FOB": {"description": "Seller delivers goods on board the ship.", "responsibility": "Seller covers export clearance only."},
-        "CIF": {"description": "Seller pays cost, insurance, and freight to destination port.", "responsibility": "Seller covers insurance & freight."},
-        "CFR": {"description": "Seller pays for transport, buyer takes risk once goods are shipped.", "responsibility": "Seller covers transport only."},
-        "CPT": {"description": "Seller pays carriage, buyer handles import duties.", "responsibility": "Moderate seller responsibility."},
-        "CIP": {"description": "Seller covers insurance and transport to named place.", "responsibility": "High seller responsibility."},
-        "DAP": {"description": "Seller delivers ready for unloading at destination.", "responsibility": "Seller handles all transport."},
-        "DPU": {"description": "Seller delivers unloaded at destination.", "responsibility": "Very high seller responsibility."},
-        "DDP": {"description": "Seller delivers goods with all duties paid.", "responsibility": "Maximum seller responsibility."},
-    }
-
-    detected_terms = []
-    for i, doc in enumerate(extracted_texts):
-        text = doc.get("content", "").upper()
-        detected = None
-
-        for term in incoterms_list:
-            # allow e.g. "CIF Novorossiysk 2020" or "DAP Moscow"
-            if re.search(rf"\b{term}\b", text):
-                detected = term
-                break
-
-        if detected:
-            detected_terms.append({
-                "doc": doc.get("filename", f"Document {i+1}"),
-                "incoterm": detected
-            })
-
-    # Risk logic
-    if any(t["incoterm"] in ["CIF", "DDP", "DPU"] for t in detected_terms):
-        risk = "Medium"
-        summary = "Detected high responsibility Incoterms (seller covers major costs)."
-    elif any(t["incoterm"] in ["DAP", "CFR", "CIP"] for t in detected_terms):
-        risk = "Low"
-        summary = "Detected balanced risk Incoterms."
-    elif len(detected_terms) == 0:
-        risk = "High"
-        summary = "No Incoterms detected – potential compliance risk."
-    else:
-        risk = "Low"
-        summary = "Standard Incoterms detected."
-
-    knowledge = [
-        {"term": k, "description": v["description"], "responsibility": v["responsibility"]}
-        for k, v in knowledge_base.items()
-    ]
-
-    return {
-        "summary": summary,
-        "risk_level": risk,
-        "details": detected_terms,
-        "knowledge": knowledge
-    }
+    
 
     # ---------------------------------------------------------------
     # INCOTERM INTELLIGENCE (Phase 2.3)
@@ -796,6 +730,9 @@ def incoterm_analysis(extracted_texts):
         "risk_level": sanction_risk,
         "details": sanction_hits
     }
+
+
+
 
     # ---------------------------------------
     # PHASE 2.5 – AI Trade Risk Insights
