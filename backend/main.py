@@ -71,14 +71,14 @@ def save_memory(records):
 
 # ---------- App ----------
 app = FastAPI(title="Document Intelligence v0.9 – Trade Compliance (Template-Agnostic step)")
-origins = ["*"]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 # ---------------------------------------------------------------
 
 # ---------------------------------------------------------------
