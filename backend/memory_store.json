@@ -1,0 +1,192 @@
+[
+  {
+    "timestamp": "2025-11-09T12:57:59.575266",
+    "exporters": [
+      "/ Shipper:",
+      "/ Shipper:"
+    ],
+    "consignees": [
+      "/ Buyer:",
+      "/ Buyer:"
+    ],
+    "ports": [
+      "Novorossiysk Port, Russia",
+      "Novorossiysk Port, Russia"
+    ],
+    "cognitive_score": 67,
+    "risk_tier": "High",
+    "hs_risk": "High",
+    "mismatch_count": 0
+  },
+  {
+    "timestamp": "2025-11-09T13:09:30.596724",
+    "exporters": [
+      "/ Shipper:",
+      "DP World Logistics Pvt Ltd"
+    ],
+    "consignees": [
+      "/ Buyer:",
+      "Zenith International"
+    ],
+    "ports": [
+      "Novorossiysk Port, Russia",
+      "Jebel Ali"
+    ],
+    "cognitive_score": 59,
+    "risk_tier": "High",
+    "hs_risk": "High",
+    "mismatch_count": 7
+  },
+  {
+    "timestamp": "2025-11-09T13:10:07.927204",
+    "exporters": [
+      "/ Shipper:",
+      "DP World Logistics Pvt Ltd"
+    ],
+    "consignees": [
+      "/ Buyer:",
+      "Zenith International"
+    ],
+    "ports": [
+      "Novorossiysk Port, Russia",
+      "Jebel Ali"
+    ],
+    "cognitive_score": 59,
+    "risk_tier": "High",
+    "hs_risk": "High",
+    "mismatch_count": 7
+  },
+  {
+    "timestamp": "2025-11-09T13:11:55.185189",
+    "exporters": [
+      "/ Shipper:",
+      "/ Shipper:"
+    ],
+    "consignees": [
+      "/ Buyer:",
+      "/ Buyer:"
+    ],
+    "ports": [
+      "Novorossiysk Port, Russia",
+      "Novorossiysk Port, Russia"
+    ],
+    "cognitive_score": 67,
+    "risk_tier": "High",
+    "hs_risk": "High",
+    "mismatch_count": 0
+  },
+  {
+    "timestamp": "2025-11-09T13:12:28.744668",
+    "exporters": [
+      "/ Shipper:",
+      "DP World Logistics Pvt Ltd"
+    ],
+    "consignees": [
+      "/ Buyer:",
+      "Zenith International"
+    ],
+    "ports": [
+      "Novorossiysk Port, Russia",
+      "Jebel Ali"
+    ],
+    "cognitive_score": 59,
+    "risk_tier": "High",
+    "hs_risk": "High",
+    "mismatch_count": 7
+  },
+  {
+    "timestamp": "2025-11-09T13:44:47.191519",
+    "exporters": [
+      "/ Shipper:",
+      "DP World Logistics Pvt Ltd"
+    ],
+    "consignees": [
+      "/ Buyer:",
+      "Zenith International"
+    ],
+    "ports": [
+      "Novorossiysk Port, Russia",
+      "Jebel Ali"
+    ],
+    "cognitive_score": 59,
+    "risk_tier": "High",
+    "hs_risk": "High",
+    "mismatch_count": 7
+  },
+  {
+    "timestamp": "2025-11-09T13:50:07.140120",
+    "exporters": [
+      "NorthBay",
+      "/ Shipper:"
+    ],
+    "consignees": [
+      "Eastern Trading Pvt Pvt Ltd",
+      "/ Buyer:"
+    ],
+    "ports": [
+      "Nhava Sheva, India",
+      "Novorossiysk Port, Russia"
+    ],
+    "cognitive_score": 59,
+    "risk_tier": "High",
+    "hs_risk": "High",
+    "mismatch_count": 7
+  },
+  {
+    "timestamp": "2025-11-10T08:28:10.787231",
+    "exporters": [
+      "/ Shipper:",
+      "DP World Logistics Pvt Ltd"
+    ],
+    "consignees": [
+      "/ Buyer:",
+      "Zenith International"
+    ],
+    "ports": [
+      "Novorossiysk Port, Russia",
+      "Jebel Ali"
+    ],
+    "cognitive_score": 59,
+    "risk_tier": "High",
+    "hs_risk": "High",
+    "mismatch_count": 7
+  },
+  {
+    "timestamp": "2025-11-10T08:28:58.139007",
+    "exporters": [
+      "Zenith International",
+      "DP World Logistics Pvt Ltd"
+    ],
+    "consignees": [
+      "DP World Logistics Pvt Ltd",
+      "Zenith International"
+    ],
+    "ports": [
+      "Nhava Sheva",
+      "Jebel Ali"
+    ],
+    "cognitive_score": 67,
+    "risk_tier": "High",
+    "hs_risk": "High",
+    "mismatch_count": 8
+  },
+  {
+    "timestamp": "2025-11-10T08:46:32.677236",
+    "exporters": [
+      "/ Shipper:",
+      "DP World Logistics Pvt Ltd"
+    ],
+    "consignees": [
+      "/ Buyer:",
+      "Zenith International"
+    ],
+    "ports": [
+      "Novorossiysk Port, Russia",
+      "Jebel Ali"
+    ],
+    "cognitive_score": 59,
+    "risk_tier": "High",
+    "hs_risk": "High",
+    "mismatch_count": 7
+  }
+]
